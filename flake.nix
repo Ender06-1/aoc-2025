@@ -17,7 +17,7 @@
         name = "aoc";
 
         packages = with pkgs; [
-          python315
+          python314
 
           pyright
 

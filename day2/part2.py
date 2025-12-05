@@ -1,16 +1,14 @@
 #!/usr/bin/env python3
 
 with open("input") as input:
-    intervals = list(
-        map(
-            lambda i: (int(i[0]), int(i[1])),
-            [inter.split("-") for inter in input.read().strip().split(",")],
-        )
+    intervals = map(
+        lambda i: (int(i[0]), int(i[1])),
+        [inter.split("-") for inter in input.read().strip().split(",")],
     )
 
     def is_invalid(num):
         for i in range(len(num) // 2):
-            if num[: (i + 1)] in num[i:] and len(num.replace(num[: (i + 1)], "")) == 0:
+            if len(num.replace(num[: (i + 1)], "")) == 0:
                 return True
         return False
 
